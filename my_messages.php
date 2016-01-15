@@ -5,7 +5,7 @@ include("inc/incfiles/header.inc.php");
 <?
 //Grab the messages for the logged in user
 $grab_messages = mysql_query("SELECT * FROM pvt_messages WHERE user_to='$user' && opened='no' && deleted='no'");
-$numrows = mysql_numrows($grab_messages);
+$numrows = mysql_num_rows($grab_messages);
 if ($numrows != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $id = $get_msg['id']; 
@@ -71,7 +71,7 @@ else
 <?
 //Grab the messages for the logged in user
 $grab_messages = mysql_query("SELECT * FROM pvt_messages WHERE user_to='$user' && opened='yes' && deleted='no'");
-$numrows_read = mysql_numrows($grab_messages);
+$numrows_read = mysql_num_rows($grab_messages);
 if ($numrows_read != 0) {
 while ($get_msg = mysql_fetch_assoc($grab_messages)) {
       $id = $get_msg['id'];
